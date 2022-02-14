@@ -1,0 +1,229 @@
+@import "reset";
+@import "mixins";
+
+// SCSS
+
+#navbar {
+  background: hsl(217, 28%, 15%);
+  padding: 5%;
+  @include flexRow;
+  justify-content: space-between;
+  ul {
+    @include flexRow;
+    li {
+      color: #fff;
+      margin: 0 30px;
+      @include fontWeightFix;
+      &:hover {
+        text-decoration: underline;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+    & :last-child {
+      margin-right: 15px;
+    }
+  }
+}
+
+#title-1 {
+  background: url("./images/bg-curvy-desktop.svg") no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  background-color: hsl(217, 28%, 15%);
+  padding: 0 25% 10%;
+  text-align: center;
+  @include heading;
+  p {
+    font-size: 20px;
+    margin: 20px 50px;
+  }
+  button {
+    @include CTA-1;
+    width: 40%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+#features {
+  background: hsl(218, 28%, 13%);
+  padding: 0 20% 17%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: 15%;
+  grid-row-gap: 25%;
+  div {
+    @include feature;
+  }
+  .ft-1 {
+    grid-column: 1 / 2;
+    img {
+      width: 90px;
+    }
+  }
+  .ft-2 {
+    grid-column: 2 / 3;
+  }
+  .ft-3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .ft-4 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+#title-2 {
+  background: hsl(218, 28%, 13%);
+  padding: 0 7%;
+  @include flexRow;
+  @include heading;
+  div {
+    margin-left: 5%;
+    margin-top: 40px;
+  }
+  h1 {
+    margin: 10px 0;
+    margin-right: 20%;
+  }
+  p {
+    font-size: 16px;
+  }
+  span {
+    @include CTA-2;
+  }
+  & > img {
+    width: 50%;
+  }
+}
+
+#testimonials {
+  background: hsl(218, 28%, 13%);
+  padding: 12% 10% 24%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4%;
+  position: relative;
+  z-index: -2;
+  & > div {
+    @include testimonial;
+  }
+  .t-1 {
+    grid-column: 1 / 2;
+    position: relative;
+    & > img {
+      position: absolute;
+      top: -35px;
+      left: -10px;
+      z-index: -1;
+    }
+  }
+  .t-2 {
+    grid-column: 2 / 3;
+  }
+  .t-3 {
+    grid-column: 3 / 4;
+  }
+}
+
+#footer {
+  background: hsl(216, 53%, 9%);
+  padding: 14% 7% 6%;
+  position: relative;
+  & > img {
+    width: 10%;
+  }
+}
+
+.sign-up-content {
+  @include heading;
+  @include signUp;
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  top: -35%;
+  .sign-up-form {
+    @include flexRow;
+    position: relative;
+    input {
+      width: 70%;
+      @include input;
+    }
+    button {
+      @include CTA-1;
+      width: 30%;
+      font-size: 16px;
+    }
+    span{
+      font-size: 12px;
+      position: absolute;
+      left: 40px;
+      bottom: -5px;
+      color: hsl(0, 100%, 63%);
+    }
+  }
+  .sign-up-form.invalid {
+    input {
+      outline: 2px solid hsl(0, 100%, 63%);
+    }
+  }
+}
+
+.footer-content {
+  margin-top: 40px;
+  color: #fff;
+  @include flexFooter;
+  .f-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 30%;
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+    img {
+      margin-top: 6px;
+      margin-right: 25px;
+    }
+  }
+  .f-contact {
+    p {
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-right: 25px;
+    }
+  }
+  .f-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 18%;
+    ul {
+      margin: 0;
+      li {
+        margin-bottom: 15px;
+        @include fontWeightFix;
+        &:hover {
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .f-socials {
+    ul {
+      @include flexRow;
+      li {
+        @include social;
+      }
+    }
+  }
+}

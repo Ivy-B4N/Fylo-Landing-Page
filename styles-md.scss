@@ -1,0 +1,227 @@
+@import "reset";
+@import "mixins";
+
+// SCSS
+
+#navbar {
+  background: hsl(217, 28%, 15%);
+  @include flexRow;
+  justify-content: space-between;
+  padding: 3% 5%;
+  ul {
+    @include flexRow;
+    li {
+      color: #fff;
+      margin: 0 10px;
+      @include fontWeightFix;
+      &:hover {
+        text-decoration: underline;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      font-size: 14px;
+    }
+    & :last-child {
+      margin-right: 5px;
+    }
+  }
+  img {
+    width: 25%;
+  }
+}
+
+#title-1 {
+  background: url("./images/bg-curvy-mobile.svg") no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-color: hsl(217, 28%, 15%);
+  padding: 10% 10% 25%;
+  text-align: center;
+  @include heading;
+  button {
+    @include CTA-1;
+    width: 80%;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+#features {
+  background: hsl(218, 28%, 13%);
+  padding: 0 10% 350px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-row-gap: 10%;
+  div {
+    @include feature;
+  }
+  .ft-1 {
+    grid-row: 1 / 2;
+  }
+  .ft-2 {
+    grid-row: 2 / 3;
+  }
+  .ft-3 {
+    grid-row: 3 / 4;
+  }
+  .ft-4 {
+    grid-row: 4 / 5;
+  }
+}
+
+#title-2 {
+  background: hsl(218, 28%, 13%);
+  padding: 0 10%;
+  @include flexColumn;
+  @include heading;
+  h1 {
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+  & > img {
+    width: 100%;
+  }
+  span {
+    @include CTA-2;
+  }
+}
+
+#testimonials {
+  background: hsl(218, 28%, 13%);
+  padding: 110px 10% 90%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 6%;
+  position: relative;
+  & > div {
+    @include testimonial;
+  }
+  .t-1 {
+    grid-row: 1 / 2;
+    position: relative;
+    & > img {
+      position: absolute;
+      width: 30px;
+      top: -18px;
+      left: 8px;
+    }
+  }
+  .t-2 {
+    grid-row: 2 / 3;
+  }
+  .t-3 {
+    grid-row: 3 / 4;
+  }
+}
+
+#footer {
+  background: hsl(216, 53%, 9%);
+  padding: 75% 10% 12%;
+  position: relative;
+  & > img {
+    width: 50%;
+  }
+}
+
+.sign-up-content {
+  @include heading;
+  @include signUp;
+  width: 88%;
+  position: absolute;
+  left: 6%;
+  top: -18%;
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+  .sign-up-form {
+    @include flexColumn;
+    position: relative;
+    margin: 20px 0 10px;
+    input {
+      width: 100%;
+      @include input;
+    }
+    button {
+      @include CTA-1;
+      width: 100%;
+      font-size: 14px;
+    }
+    span{
+      font-size: 12px;
+      position: absolute;
+      left: 40px;
+      bottom: -5px;
+      color: hsl(0, 100%, 63%);
+    }
+  }
+  .sign-up-form.invalid {
+    input {
+      outline: 2px solid hsl(0, 100%, 63%);
+    }
+  }
+}
+
+.footer-content {
+  margin-top: 40px;
+  color: #fff;
+  @include flexColumn;
+  .f-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    p {
+      margin: 0;
+    }
+    img {
+      margin-top: 6px;
+      margin-right: 25px;
+    }
+  }
+  .f-contact {
+    margin-top: 20px;
+    p {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-right: 20px;
+    }
+  }
+  .f-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 24%;
+    ul {
+      margin: 18px 0;
+      li {
+        margin-bottom: 15px;
+        @include fontWeightFix;
+        &:hover {
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .f-socials {
+    margin: 0 auto;
+    ul {
+      @include flexRow;
+      li {
+        @include social;
+      }
+    }
+  }
+}
