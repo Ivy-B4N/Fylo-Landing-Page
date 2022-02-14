@@ -433,6 +433,7 @@ li {
 }
 .sign-up-content .sign-up-form.invalid input {
   outline: 2px solid #ff4242;
+  border-radius: 30px;
 }
 
 .footer-content {
